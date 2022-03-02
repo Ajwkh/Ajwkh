@@ -50,7 +50,7 @@ Feature: Demo
     * def name = response.name
     * match name == '#string'
     * def zipcode = response.address.zipcode
-    * match zipcode =='#number'
+    * match zipcode !='#number'
 
 @test
   Scenario Outline: dataDriven scenario
