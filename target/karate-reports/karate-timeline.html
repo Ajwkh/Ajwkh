@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-4","id":1},{"content":"pool-1-thread-5","id":2},{"content":"pool-1-thread-1","id":3},{"content":"pool-1-thread-2","id":4},{"content":"pool-1-thread-3","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/users[1:7]","start":1646266513592,"end":1646266513878,"title":"examples\/users\/users[1:7] 16:15:13.592-16:15:13.878 get all users and then get the first user by id"},{"id":2,"group":2,"content":"examples\/users\/users[2:18]","start":1646266513592,"end":1646266513832,"title":"examples\/users\/users[2:18] 16:15:13.592-16:15:13.832 create a user and then get it by id"},{"id":3,"group":3,"content":"examples\/users\/Demo[1:9]","start":1646266512437,"end":1646266513474,"title":"examples\/users\/Demo[1:9] 16:15:12.437-16:15:13.474 getAll users"},{"id":4,"group":4,"content":"examples\/users\/Demo[2:22]","start":1646266512437,"end":1646266513588,"title":"examples\/users\/Demo[2:22] 16:15:12.437-16:15:13.588 create a user"},{"id":5,"group":5,"content":"examples\/users\/Demo[3.1:86]","start":1646266512437,"end":1646266513626,"title":"examples\/users\/Demo[3.1:86] 16:15:12.437-16:15:13.626 dataDriven scenario"},{"id":6,"group":1,"content":"examples\/users\/Demo[3.2:87]","start":1646266512437,"end":1646266513586,"title":"examples\/users\/Demo[3.2:87] 16:15:12.437-16:15:13.586 dataDriven scenario"},{"id":7,"group":2,"content":"examples\/users\/Demo[3.3:88]","start":1646266512437,"end":1646266513587,"title":"examples\/users\/Demo[3.3:88] 16:15:12.437-16:15:13.587 dataDriven scenario"},{"id":8,"group":3,"content":"examples\/users\/Demo[3.4:89]","start":1646266513484,"end":1646266513825,"title":"examples\/users\/Demo[3.4:89] 16:15:13.484-16:15:13.825 dataDriven scenario"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
